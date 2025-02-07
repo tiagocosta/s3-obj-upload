@@ -24,9 +24,8 @@ public class ObjectServiceImpl implements ObjectService {
     }
 
     @Override
-    public void uploadObject(String bucketName, Path filePath) {
+    public void uploadObject(String bucketName, File file) {
         final var s3 = awsConfig.s3();
-        var fileName = filePath.getFileName().toString();
-        s3.putObject(bucketName, fileName, new File(filePath.toString()));
+        s3.putObject(bucketName, file.getName(), file);
     }
 }
