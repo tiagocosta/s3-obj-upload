@@ -33,4 +33,10 @@ public class BucketServiceImpl implements BucketService {
         final var s3 = awsConfig.s3();
         return s3.listBuckets(new ListBucketsPaginatedRequest()).getBuckets();
     }
+
+    @Override
+    public Bucket create(String bucketName) {
+        final var s3 = awsConfig.s3();
+        return s3.createBucket(bucketName);
+    }
 }

@@ -8,4 +8,5 @@ public interface BucketService {
 
     Bucket findBucketByName(String bucketName);
     List<Bucket> findAll();
+    Bucket create(String bucketName);
 }
