@@ -1,6 +1,7 @@
 package com.tcs.controller.exception;
 
 import com.tcs.service.exception.BusinessException;
+import com.tcs.service.exception.FileUploadException;
 import com.tcs.service.exception.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<String> handleNoContentException() {
         return new ResponseEntity<>("Resource ID not found.", HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(FileUploadException.class)
+    public ResponseEntity<String> handleFileUploadException() {
+        return new ResponseEntity<>("File upload failed", HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Throwable.class)
