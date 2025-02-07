@@ -6,3 +6,6 @@ aws:
   key:
     access: ${AWS_ACCESS_KEY}
     secret: ${AWS_SECRET_KEY}
+
+temp:
+  folder: /home/tiagocs/tmp
